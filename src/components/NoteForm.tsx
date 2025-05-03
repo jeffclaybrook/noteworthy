@@ -93,7 +93,7 @@ export function NoteForm({ onSave, onCancel, initialNote, onDelete }: NoteFormPr
        name="content"
        render={({ field }) => (
         <FormItem>
-         <FormLabel>Content</FormLabel>
+         <FormLabel>Note</FormLabel>
          <FormControl>
           <Textarea
            placeholder="Note"
