@@ -1,10 +1,9 @@
 "use client"
 
-import { useEffect, useState, ChangeEvent } from "react"
+import { useState, ChangeEvent } from "react"
 import { useDebouncedCallback } from "use-debounce"
 import { UserButton } from "@clerk/nextjs"
 import { Grid, List, Search } from "./Icons"
-import clsx from "clsx"
 
 type ViewMode = "grid" | "list"
 
@@ -16,8 +15,6 @@ type SearchBarProps = {
 
 export function SearchBar({ view, onToggleView, onSearch }: SearchBarProps) {
  const [query, setQuery] = useState<string>("")
- const [visible, setVisible] = useState<boolean>(true)
- const [lastScrollY, setLastScrollY] = useState<number>(0)
 
  const debouncedSearch = useDebouncedCallback((value: string) => {
   onSearch(value.trim().toLowerCase())
@@ -29,31 +26,8 @@ export function SearchBar({ view, onToggleView, onSearch }: SearchBarProps) {
   debouncedSearch(value)
  }
 
- useEffect(() => {
-  const handleScroll = () => {
-   const currentY = window.scrollY
-
-   if (currentY > lastScrollY && currentY > 0) {
-    setVisible(false)
-   } else {
-    setVisible(true)
-   }
-
-   setLastScrollY(currentY)
-  }
-
-  window.addEventListener("scroll", handleScroll)
-
-  return () => window.removeEventListener("scroll", handleScroll)
- }, [lastScrollY])
-
  return (
-  <header
-   className={clsx(
-    "fixed top-0 left-0 right-0 w-full transition-all duration-500 z-40 p-2",
-    visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-20"
-   )}
-  >
+  <header className="fixed top-0 left-0 w-full p-2">
    <div className="flex relative rounded-full bg-[#e9eef6]">
     <Search className="absolute inset-y-[13px] left-4 pointer-events-none text-gray-500" />
     <input
