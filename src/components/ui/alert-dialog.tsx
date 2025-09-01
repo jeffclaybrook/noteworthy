@@ -123,7 +123,7 @@ function AlertDialogAction({
 }: ComponentProps<typeof AlertDialogPrimitive.Action>) {
   return (
     <AlertDialogPrimitive.Action
-      className={cn(buttonVariants({ variant: "delete" }), className)}
+      className={cn(buttonVariants({ variant: "destructive" }), className)}
       {...props}
     />
   )

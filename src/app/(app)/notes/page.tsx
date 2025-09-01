@@ -1,13 +1,11 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { useMediaQuery } from "usehooks-ts"
 import { UserButton } from "@clerk/nextjs"
 import { toast } from "sonner"
 import { Note } from "@prisma/client"
-import { Button } from "@/components/ui/button"
-import { AddIcon } from "@/components/Icons"
 import { BottomSheet } from "@/components/BottomSheet"
+import { CreateButton } from "@/components/CreateButton"
 import { EmptyState } from "@/components/EmptyState"
 import { Header } from "@/components/Header"
 import { Loader } from "@/components/Loader"
@@ -46,10 +44,6 @@ export default function Notes() {
  useEffect(() => {
   localStorage.setItem("viewMode", view)
  }, [view])
-
- const isMobile = useMediaQuery("(max-width: 1024px)", {
-  initializeWithValue: false
- })
 
  const onToggleView = () => {
   setView((prev) => (prev === "grid" ? "list" : "grid"))
@@ -141,16 +135,7 @@ export default function Notes() {
      )}
     </main>
    )}
-   <Button
-    type="button"
-    size={isMobile ? "icon" : "lg"}
-    aria-label="Create note"
-    onClick={openCreateSheet}
-    className="fixed bottom-6 right-6 text-white bg-[#4c5d87] transition duration-100 hover:bg-slate-700 hover:shadow-xl p-6"
-   >
-    <AddIcon className="size-6" />
-    <span className={isMobile ? "hidden" : "inline-block"}>Create</span>
-   </Button>
+   <CreateButton onClick={openCreateSheet} />
    <BottomSheet isOpen={sheetOpen} onClose={() => setSheetOpen(false)}>
     <NoteForm
      onSave={handleSave}

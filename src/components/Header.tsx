@@ -51,7 +51,6 @@ export function Header({
      size="icon"
      aria-label="Toggle view"
      onClick={onToggleView}
-     className="rounded-full"
     >
      {view === "grid" ? <ListIcon className="size-6" /> : <GridIcon className="size-6" />}
     </Button>

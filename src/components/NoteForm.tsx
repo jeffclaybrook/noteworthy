@@ -122,9 +122,9 @@ export function NoteForm({
        <AlertDialogTrigger asChild>
         <Button
          type="button"
-         variant="delete"
+         variant="destructive"
+         size="lg"
          aria-label="Delete note"
-         className="py-5"
         >
          <DeleteIcon className="size-6" />
          Delete
@@ -148,18 +148,18 @@ export function NoteForm({
       <Button
        type="button"
        variant="ghost"
+       size="lg"
        aria-label="Cancel"
        onClick={onCancel}
-       className="py-5"
       >
        Cancel
       </Button>
      )}
      <Button
       type="submit"
+      size="lg"
       disabled={isSubmitting}
       aria-label="Save note"
-      className="text-white bg-[#4c5d87] px-6 py-5 transition duration-100 hover:bg-slate-700 hover:shadow-xl"
      >
       {isSubmitting ? "Saving..." : "Save"}
      </Button>

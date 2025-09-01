@@ -33,7 +33,6 @@ export function ThemeToggle() {
      variant="ghost"
      size="icon"
      aria-label="Toggle theme"
-     className="rounded-full"
     >
      {resolvedTheme === "dark" ? <MoonIcon className="size-6" /> : <SunIcon className="size-6" />}
      <span className="sr-only">Toogle theme</span>

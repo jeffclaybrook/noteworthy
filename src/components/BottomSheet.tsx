@@ -33,7 +33,6 @@ export function BottomSheet({
        size="icon"
        aria-label="Close sheet"
        onClick={onClose}
-       className="rounded-full"
       >
        <CloseIcon className="size-6" />
       </Button>
