@@ -17,7 +17,7 @@ export default function Home() {
      height={200}
     />
     <h1 className="text-slate-800 dark:text-slate-100 text-center text-2xl lg:text-4xl">Simple note taking with Noteworthy</h1>
-    <div className="flex flex-col items-center justify-center gap-4 lg:flex-row">
+    <div className="flex flex-col items-center justify-center gap-4 lg:flex-row max-w-sm w-full">
      <Button
       type="button"
       size="lg"
