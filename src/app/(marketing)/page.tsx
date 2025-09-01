@@ -9,7 +9,7 @@ export default function Home() {
    <header className="flex items-center justify-end gap-2 fixed top-0 left-0 right-0 w-full p-2 lg:px-4">
     <ThemeToggle />
    </header>
-   <section className="flex flex-col items-center justify-center gap-12 max-w-xl w-full mx-auto min-h-screen px-2 lg:px-4">
+   <section className="flex flex-col items-center justify-center gap-12 h-screen px-2 lg:px-4">
     <Image
      src="/logo.png"
      alt="Noteworthy logo"
@@ -17,7 +17,7 @@ export default function Home() {
      height={200}
     />
     <h1 className="text-slate-800 dark:text-slate-100 text-center text-2xl lg:text-4xl">Simple note taking with Noteworthy</h1>
-    <div className="flex items-center justify-center gap-4">
+    <div className="flex flex-col items-center justify-center gap-4 lg:flex-row max-w-xs w-full mx-auto">
      <Button
       type="button"
       size="lg"
