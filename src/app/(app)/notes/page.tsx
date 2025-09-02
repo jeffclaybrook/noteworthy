@@ -121,9 +121,13 @@ export default function Notes() {
     </main>
    ) : (
     <main>
-     <Header onSearch={setQuery} view={view} onToggleView={onToggleView} />
+     <Header
+      onSearch={setQuery}
+      view={view}
+      onToggleView={onToggleView}
+     />
      {filteredNotes.length === 0 ? (
-      <section className="flex items-center justify-center min-h-screen">
+      <section className="flex items-center justify-center fixed top-0 left-0 w-full h-screen -z-10">
        <p className="text-slate-800 dark:text-slate-100 text-center">No matching notes found.</p>
       </section>
      ) : (

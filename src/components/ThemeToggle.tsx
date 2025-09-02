@@ -34,7 +34,10 @@ export function ThemeToggle() {
      size="icon"
      aria-label="Toggle theme"
     >
-     {resolvedTheme === "dark" ? <MoonIcon className="size-6" /> : <SunIcon className="size-6" />}
+     {resolvedTheme === "dark"
+      ? <MoonIcon className="size-6" />
+      : <SunIcon className="size-6" />
+     }
      <span className="sr-only">Toogle theme</span>
     </Button>
    </DropdownMenuTrigger>

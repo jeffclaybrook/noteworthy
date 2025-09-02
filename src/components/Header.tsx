@@ -35,7 +35,7 @@ export function Header({
 
  return (
   <header className="flex items-center gap-2 fixed top-0 left-0 right-0 w-full p-2 lg:px-4">
-   <div className="flex-1" />
+   <div className="hidden lg:flex flex-1" />
    <div className="flex items-center mx-auto max-w-xl w-full rounded-full bg-card border pl-4 pr-2">
     <SearchIcon className="size-6 pointer-events-none" />
     <Input
@@ -52,7 +52,10 @@ export function Header({
      aria-label="Toggle view"
      onClick={onToggleView}
     >
-     {view === "grid" ? <ListIcon className="size-6" /> : <GridIcon className="size-6" />}
+     {view === "grid"
+      ? <ListIcon className="size-6" />
+      : <GridIcon className="size-6" />
+     }
     </Button>
    </div>
    <div className="flex items-center justify-end gap-2 flex-1">

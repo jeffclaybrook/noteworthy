@@ -21,6 +21,7 @@ export default function Home() {
      <Button
       type="button"
       size="lg"
+      aria-label="Sign up"
       className="w-full"
       asChild
      >
@@ -30,6 +31,7 @@ export default function Home() {
       type="button"
       variant="outline"
       size="lg"
+      aria-label="Sign in"
       className="w-full"
       asChild
      >
