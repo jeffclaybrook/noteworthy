@@ -1,13 +1,13 @@
 import type { Metadata } from "next"
-import { Mulish } from "next/font/google"
+import { Outfit } from "next/font/google"
 import { ReactNode } from "react"
 import { ClerkProvider } from "@clerk/nextjs"
 import { ThemeProvider } from "next-themes"
 import { Toaster } from "sonner"
 import "./globals.css"
 
-const mulish = Mulish({
-  variable: "--font-mulish",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"]
 })
 
@@ -28,7 +28,7 @@ export default function RootLayout({
       }}
     >
       <html lang="en" suppressHydrationWarning>
-        <body className={`${mulish.variable} antialiased`}>
+        <body className={`${outfit.variable} antialiased`}>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"

@@ -15,10 +15,10 @@ export function NoteCard({
  return (
   <Card
    onClick={() => onClick(note)}
-   className="transition cursor-pointer duration-100 shadow-none hover:shadow-lg"
+   className="transition-shadow cursor-pointer duration-200 shadow-none hover:shadow-lg"
   >
    <CardHeader>
-    <CardTitle className="text-lg/6 font-semibold">{note.title}</CardTitle>
+    <CardTitle className="text-lg/6">{note.title}</CardTitle>
     <CardDescription>{note.description}</CardDescription>
    </CardHeader>
    <CardFooter className="justify-end">

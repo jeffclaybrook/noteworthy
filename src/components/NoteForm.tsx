@@ -75,17 +75,16 @@ export function NoteForm({
  return (
   <Form {...form}>
    <form onSubmit={form.handleSubmit(handleSubmit)} className="flex flex-col gap-6 max-w-lg w-full mx-auto">
-    <h1 className="text-slate-800 dark:text-slate-100 text-center text-2xl">{initialNote ? "Update Note" : "Create Note"}</h1>
+    <h1 className="text-slate-800 dark:text-slate-100 text-center text-2xl">{initialNote ? "Update note" : "Create note"}</h1>
     <FormField
      control={form.control}
      name="title"
      render={({ field }) => (
       <FormItem>
-       <FormLabel htmlFor="title">Title</FormLabel>
+       <FormLabel>Title</FormLabel>
        <FormControl>
         <Input
          type="text"
-         id="title"
          placeholder="Title"
          autoFocus
          required
@@ -102,12 +101,10 @@ export function NoteForm({
      name="description"
      render={({ field }) => (
       <FormItem>
-       <FormLabel htmlFor="description">Description</FormLabel>
+       <FormLabel>Description</FormLabel>
        <FormControl>
         <Textarea
-         id="description"
          placeholder="Description"
-         rows={6}
          className="min-h-28 focus-visible:ring-[1px]"
          {...field}
         />

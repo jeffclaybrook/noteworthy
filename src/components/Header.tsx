@@ -3,10 +3,10 @@
 import { ChangeEvent, useState } from "react"
 import { useDebouncedCallback } from "use-debounce"
 import { UserButton } from "@clerk/nextjs"
-import { Button } from "./ui/button"
 import { Input } from "./ui/input"
-import { GridIcon, ListIcon, SearchIcon } from "./Icons"
+import { SearchIcon } from "./Icons"
 import { ThemeToggle } from "./ThemeToggle"
+import { ViewToggle } from "./ViewToggle"
 
 type ViewMode = "grid" | "list"
 
@@ -34,7 +34,7 @@ export function Header({
  }
 
  return (
-  <header className="flex items-center gap-2 fixed top-0 left-0 right-0 w-full p-2 lg:px-4">
+  <header className="flex items-center gap-2 fixed top-0 left-0 right-0 w-full p-2 lg:px-4 bg-background z-50">
    <div className="hidden lg:flex flex-1" />
    <div className="flex items-center mx-auto max-w-xl w-full rounded-full bg-card border pl-4 pr-2">
     <SearchIcon className="size-6 pointer-events-none" />
@@ -43,22 +43,11 @@ export function Header({
      placeholder="Search notes..."
      value={query}
      onChange={handleChange}
-     className="w-full bg-transparent dark:bg-transparent border-none outline-none shadow-none h-12 focus-visible:ring-[0px] mr-auto"
+     className="w-full dark:bg-transparent border-none outline-none shadow-none h-12 focus-visible:ring-[0px] mr-auto"
     />
-    <Button
-     type="button"
-     variant="ghost"
-     size="icon"
-     aria-label="Toggle view"
-     onClick={onToggleView}
-    >
-     {view === "grid"
-      ? <ListIcon className="size-6" />
-      : <GridIcon className="size-6" />
-     }
-    </Button>
+    <ViewToggle view={view} onToggleView={onToggleView} />
    </div>
-   <div className="flex items-center justify-end gap-2 flex-1">
+   <div className="flex items-center justify-end gap-3 flex-1">
     <ThemeToggle />
     <UserButton />
    </div>

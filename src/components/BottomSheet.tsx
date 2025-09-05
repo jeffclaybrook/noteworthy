@@ -35,6 +35,7 @@ export function BottomSheet({
        onClick={onClose}
       >
        <CloseIcon className="size-6" />
+       <span className="sr-only">Close sheet</span>
       </Button>
      </div>
      {children}

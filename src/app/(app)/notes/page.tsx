@@ -113,7 +113,7 @@ export default function Notes() {
   <>
    {notes.length === 0 ? (
     <main>
-     <header className="flex items-center justify-end gap-2 fixed top-0 left-0 right-0 w-full p-2 lg:px-4">
+     <header className="flex items-center justify-end gap-2 fixed top-0 left-0 right-0 w-full p-2 lg:px-4 z-50">
       <ThemeToggle />
       <UserButton />
      </header>
@@ -127,7 +127,7 @@ export default function Notes() {
       onToggleView={onToggleView}
      />
      {filteredNotes.length === 0 ? (
-      <section className="flex items-center justify-center fixed top-0 left-0 w-full h-screen -z-10">
+      <section className="flex items-center justify-center fixed top-0 left-0 h-screen w-full -z-10">
        <p className="text-slate-800 dark:text-slate-100 text-center">No matching notes found.</p>
       </section>
      ) : (
